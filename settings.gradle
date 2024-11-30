@@ -1,1 +1,5 @@
 rootProject.name = 'category'
+
+include "api"
+include "core"
+include "infra"

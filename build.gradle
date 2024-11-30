@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.4.0'
+    id 'org.springframework.boot' version '3.1.0'
     id 'io.spring.dependency-management' version '1.1.6'
 }
 
@@ -8,21 +8,57 @@ group = 'com.musinsa'
 version = '0.0.1-SNAPSHOT'
 
 java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
-    }
+    sourceCompatibility = JavaVersion.VERSION_17
 }
 
 repositories {
     mavenCentral()
 }
 
-dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+subprojects { // 모든 하위 모듈들에 이 설정을 적용합니다.
+
+    apply plugin: 'java'
+    apply plugin: 'java-library'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter'
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+        implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
+        implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+        runtimeOnly 'com.h2database:h2'
+
+        testImplementation 'org.projectlombok:lombok:1.18.22'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+        testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+        testCompileOnly 'org.projectlombok:lombok'
+        testAnnotationProcessor 'org.projectlombok:lombok'
+    }
+
+    tasks.named('test') {
+        useJUnitPlatform()
+    }
 }
 
-tasks.named('test') {
-    useJUnitPlatform()
+
+project(":api") {
+    dependencies {
+        implementation project(":core")
+        implementation project(":infra") {
+            dependencies {
+                implementation project(":core")
+            }
+        }
+    }
 }
+
+
+bootJar.enabled = false // 빌드시 현재 모듈의 .jar를 생성하지 않습니다.
+
