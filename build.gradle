@@ -61,16 +61,8 @@ project(":api") {
                 annotationProcessor "com.querydsl:querydsl-apt:5.0.0:jakarta"
                 annotationProcessor "jakarta.annotation:jakarta.annotation-api"
                 annotationProcessor "jakarta.persistence:jakarta.persistence-api"
-
-                implementation 'org.mapstruct:mapstruct:1.5.5.Final'
-                annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
-
             }
         }
         implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
     }
 }
-
-
-bootJar.enabled = false // 빌드시 현재 모듈의 .jar를 생성하지 않습니다.
-
