@@ -66,29 +66,35 @@ Product ⇄ Price (1:1 관계):
 ![img_3.png](image/img_3.png)
 ![img_4.png](image/img_4.png)
 
+<h1>2번 문제</h1>
 
-<h2>2번 문제</h1>
 ![img_14.png](image/img_14.png)
 ![img_7.png](image/img_7.png)
 ![img_8.png](image/img_8.png)
 ![img_11.png](image/img_11.png)
 ![img_12.png](image/img_12.png)
 
-<h2>3번 문제</h1>
+<h1>3번 문제</h1>
+
 ![img_14.png](image/img_14.png)
 ![img_15.png](image/img_15.png)
 ![img_17.png](image/img_17.png)
-<h2>4번 문제</h1>
+
+<h1>4번 문제</h1>
 <h3>Brand</h3>
+
 ![img_19.png](image/img_19.png)
+
 1-1 (저장)
 ![img_31.png](image/img_31.png)
 ![img_32.png](image/img_32.png)
 ![img_33.png](image/img_33.png)
+
 1-2 (삭제)
 ![img_35.png](image/img_35.png)
 ![img_36.png](image/img_36.png)
 ![img_37.png](image/img_37.png)
+
 1-3 (수정)
 ![img_38.png](image/img_38.png)
 ![img_39.png](image/img_39.png)
@@ -102,9 +108,11 @@ Product ⇄ Price (1:1 관계):
 ![img_21.png](image/img_21.png)
 ![img_23.png](image/img_23.png)
 ![img_24.png](image/img_24.png)
+
 1-2 (삭제)
 ![img_25.png](image/img_25.png)
 ![img_26.png](image/img_26.png)
+
 1-3 (수정)
 ![img_27.png](image/img_27.png)
 ![img_28.png](image/img_28.png)
